@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+# Use Faraday for HTTP requests
+gem 'faraday'
 # Use kaminari for Pagination
 gem 'kaminari'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
