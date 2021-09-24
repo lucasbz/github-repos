@@ -1,0 +1,6 @@
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']
+
+AllCops:
+  Exclude:
+    - 'bin/bundle'
