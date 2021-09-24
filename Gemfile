@@ -3,12 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+# Use kaminari for Pagination
+gem 'kaminari'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
+# Use Rubocop as Linter
+gem 'rubocop', require: false
+gem 'rubocop-rails'
+gem 'rubocop-rspec'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -48,8 +54,15 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  # Use Simplecov for Code Coverage
+  gem 'simplecov', require: false
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'webmock'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 4.0.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
