@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<p id="error"><%= flash[:error] %></p>
+
+<h1>Github Public Repositories</h1>
+
+<%= form_with url: "/", method: :get do |form| %>
+  <%= form.label :query, "Keywords:" %>
+  <%= form.text_field :q, value: params[:q] %>
+  <%= form.hidden_field :page, value: params[:page] %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name / Link</th>
+      <th>description</th>
+      <th>Forks</th>
+      <th>Watchers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @repositories.each do |repository| %>
+      <tr>
+        <td><%= link_to repository.full_name, repository.html_url, target: '_blank' %></td>
+        <td><%= repository.description %></td>
+        <td><%= repository.forks %></td>
+        <td><%= repository.watchers %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @repositories %>
