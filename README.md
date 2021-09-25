@@ -1,24 +1,46 @@
-# README
+# Github Repos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-* Ruby version
+### Installing
 
-* System dependencies
+Clone git repository and run bundle install:
 
-* Configuration
+```
+$ git clone git@github.com:lucasbz/github-repos.git
+$ bundle install
+```
 
-* Database creation
+Run the application:
 
-* Database initialization
+```
+$ bundle exec rails s
+```
 
-* How to run the test suite
+### Running the specs
 
-* Services (job queues, cache servers, search engines, etc.)
+To run the specs execute following statement:
 
-* Deployment instructions
+```
+$ bundle exec rspec
+```
 
-* ...
+### Running the linter
+
+To run the linter execute following statement:
+
+```
+$ bundle exec rubocop
+```
+
+### Running the code coverage
+
+The code coverage report is auto-generated when running the specs
+
+### Github Reference API used
+
+```
+https://docs.github.com/en/rest/reference/search#search-repositories
+```
