@@ -31,7 +31,6 @@ RSpec.describe 'Repository' do
   end
 
   context '#search' do
-
     context 'returns an empty array when no search term is provided' do
       let(:repository_search) { Repository.search }
       it { expect(repository_search).to be_empty }
@@ -43,18 +42,17 @@ RSpec.describe 'Repository' do
     end
 
     context 'returns an array of Repositories when Github returns an array of items' do
-      let(:repository_search) { Repository.search("webmock") }
+      let(:repository_search) { Repository.search('webmock') }
       it {
         mock = double('GithubService')
         allow(GithubService).to receive(:new).and_return(mock)
-        allow(mock).to receive(:search).and_return({'items': [
+        allow(mock).to receive(:search).and_return({ 'items': [
           { 'full_name': 'dtrupenn/Tetris1', 'description': 'desc', 'forks': 10, 'watchers': 10 },
           { 'full_name': 'dtrupenn/Tetris2', 'description': 'desc', 'forks': 10, 'watchers': 10 },
           { 'full_name': 'dtrupenn/Tetris3', 'description': 'desc', 'forks': 10, 'watchers': 10 }
-        ]}.with_indifferent_access)
+        ] }.with_indifferent_access)
         expect(repository_search).to include(a_kind_of(Repository))
       }
     end
-
   end
 end

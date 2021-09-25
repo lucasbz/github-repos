@@ -13,6 +13,7 @@ class Repository
 
   def self.search(search_term = '')
     return [] if search_term.nil? || search_term.empty?
+
     search_result = GithubService.new.search(search_term)
     search_result['items'].map { |item| Repository.new(item) }
   end
