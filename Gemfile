@@ -66,7 +66,9 @@ group :test do
 end
 
 group :development, :test do
+  gem 'debase'
   gem 'rspec-rails', '~> 4.0.2'
+  gem 'ruby-debug-ide'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

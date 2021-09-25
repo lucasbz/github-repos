@@ -81,6 +81,9 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    debase (0.2.4.1)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.12)
     diff-lcs (1.4.4)
     docile (1.4.0)
     erubi (1.10.0)
@@ -221,6 +224,8 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
     rubocop-rspec (2.5.0)
       rubocop (~> 1.19)
+    ruby-debug-ide (0.7.3)
+      rake (>= 0.8.1)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -293,6 +298,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  debase
   faraday
   jbuilder (~> 2.7)
   kaminari
@@ -304,6 +310,7 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   rubocop-rspec
+  ruby-debug-ide
   sass-rails (>= 6)
   selenium-webdriver
   simplecov
